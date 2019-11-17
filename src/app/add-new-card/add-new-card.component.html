@@ -1,0 +1,63 @@
+<div>
+    <div>
+        <app-nav-bar></app-nav-bar>
+    </div>
+
+    <div>
+        <p class="instruction">To add new business card follow the steps below.</p>
+        <hr class="horizLine">
+    </div>
+
+    <div>
+        <div>
+            <p class="step1">Step 1: Take a snapshot of a business card</p>
+            <hr class="horizLine2">
+        </div>
+
+        <div>
+            <app-webcam></app-webcam>
+        </div>
+    </div>
+
+    <div>
+        <div>
+            <p class="step2">Step 2: Verify the info and make adjustments</p>
+            <hr class="horizLine2">
+        </div>
+
+        <div>
+            <form>
+                <div class="form-row">
+
+                    <div class="form-group col-md-6">
+                        <label for="fname">First Name</label>
+                        <input type="text" class="form-control" id="fname" placeholder="First Name">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="lname">Last Name</label>
+                        <input type="text" class="form-control" id="lname" placeholder="Last Name">
+                    </div>
+
+                    <div class="form-group col-md-6">
+                        <label for="email">Email</label>
+                        <input type="text" class="form-control" id="email" placeholder="Email">
+                    </div>
+      
+                    <div class="form-group col-md-6">
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="text" class="form-control" id="phoneNumber" placeholder="Phone Number">
+                    </div>
+
+                </div>
+            </form>
+
+            <div>
+                <p class="step2">Step 3: Does everythig look good? If so, click upload business card.</p>
+                <hr class="horizLine2">
+                <button class="btn btn-success">Upload Business Card</button>
+            </div>
+        </div>
+    </div>
+
+</div>
