@@ -5,7 +5,8 @@ CSC 436 Web Applications
 
 GitHub URL: https://github.com/MarMil1/CSC436-business-card-app
 
-- Business Cards App Firebase hosting link: 
+- Business Cards App Firebase hosting link: https://business-card-app-be379.firebaseapp.com/addnewcard
+- For best performance please use Chrome browser in full screen.
 - Log in using password and username as instructed by the professor.
 - Once logged in view all currently uploaded business cards from All Cards page.
 - Search bar is provided to allow searching by first or last name.
@@ -14,4 +15,5 @@ GitHub URL: https://github.com/MarMil1/CSC436-business-card-app
 - User settings icon on the right side contains manually added info to show profile view in the next version of the app.
 - GitHub icon in the footer is a link to the Business Cards App repository 
 - Logout button is available at the top right corner of the page.
+- Known bugs: CSS is not responsive and may have unexpected appearance depending on browser window size.
 - Time spent working on the app between one and two weeks.
