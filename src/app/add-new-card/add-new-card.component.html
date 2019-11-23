@@ -1,7 +1,11 @@
-<div>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<div id="page-container">
+    <div id="content-wrap">
     <div>
         <app-nav-bar></app-nav-bar>
     </div>
+
+    <!-- <app-user-profile></app-user-profile> -->
 
     <div>
         <p class="instruction">To add new business card follow the steps below.</p>
@@ -10,12 +14,16 @@
 
     <div>
         <div>
-            <p class="step1">Step 1: Take a snapshot of a business card</p>
+            <p class="step1">Step 1: Capture and confirm a snapshot of a business card</p>
             <hr class="horizLine2">
+            <app-user-profile></app-user-profile>
         </div>
 
         <div>
-            <app-webcam></app-webcam>
+            <app-webcam 
+            (base64)="getBase64($event)"
+            (textsFromWebCam)="getTextsFromWebCam($event)"
+            ></app-webcam>
         </div>
     </div>
 
@@ -26,38 +34,48 @@
         </div>
 
         <div>
-            <form>
+            <form [formGroup]="formGroup">
                 <div class="form-row">
 
                     <div class="form-group col-md-6">
                         <label for="fname">First Name</label>
-                        <input type="text" class="form-control" id="fname" placeholder="First Name">
+                        <input type="text" class="form-control" id="fname" placeholder="First Name" formControlName="firstName">
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="lname">Last Name</label>
-                        <input type="text" class="form-control" id="lname" placeholder="Last Name">
+                        <input type="text" class="form-control" id="lname" placeholder="Last Name" formControlName="lastName">
                     </div>
 
                     <div class="form-group col-md-6">
                         <label for="email">Email</label>
-                        <input type="text" class="form-control" id="email" placeholder="Email">
+                        <input type="text" class="form-control" id="email" placeholder="Email" formControlName="email">
                     </div>
       
                     <div class="form-group col-md-6">
                         <label for="phoneNumber">Phone Number</label>
-                        <input type="text" class="form-control" id="phoneNumber" placeholder="Phone Number">
+                        <input type="text" class="form-control" id="phoneNumber" placeholder="Phone Number" 
+                        name="phone" formControlName="phone">
                     </div>
 
                 </div>
             </form>
 
             <div>
-                <p class="step2">Step 3: Does everythig look good? If so, click upload business card.</p>
+                <p class="step2">Step 3: Does everything look good? If so, click upload business card.</p>
                 <hr class="horizLine2">
-                <button class="btn btn-success">Upload Business Card</button>
+                <button class="btn btn-danger" [routerLink]="['/allcards']" routerLinkActive="router-link-active">Cancel</button>
+                <button class="btn btn-success" (click)="submit()" [routerLink]="['/allcards']" routerLinkActive="router-link-active">Upload Business Card</button>
             </div>
         </div>
     </div>
+</div>
+    <footer id="footer">
+        <p class="madeWith">Created by Marko Milosavljevic 2019. 
+                <img class="logo" src="assets/logo.jpg" width="35" height="35">
+          <span><a class="btn btn-link" style="color:black" href="https://github.com/MarMil1/CSC436-business-card-app">
+            <i class="fab fa-github fa-2x"></i></a></span> 
+        <span class="madeIn">Made in Angular8.</span></p>
+    </footer>
 
 </div>

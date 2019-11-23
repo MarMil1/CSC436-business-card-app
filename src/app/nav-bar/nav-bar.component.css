@@ -1,8 +1,13 @@
 .navbar {
     background-color: #d3d3d3;
+    font-size: 18px;
 }
 
 .btn-info {
     margin-left: 70px;
+}
+
+#profileBtn {
+    margin-left: 800px;
 }
 

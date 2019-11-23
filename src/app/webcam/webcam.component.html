@@ -16,10 +16,10 @@
 
 
   <div class="snapshot" *ngIf="webcamImage">
-      <img [src]="webcamImage.imageAsDataUrl"
+      <img id="imageSnapshot" [src]="webcamImage.imageAsDataUrl"
         [height]="375" [width]="500">
       <div>
-        <button class="btn btn-warning">Confirm Snapshot</button>
+        <button class="btn btn-warning" (click)="confirm()">Confirm Snapshot</button>
       </div>
   </div>
 

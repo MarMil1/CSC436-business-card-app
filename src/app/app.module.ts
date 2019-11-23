@@ -14,13 +14,18 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth.guard';
 import { AddNewCardComponent } from './add-new-card/add-new-card.component';
-import { ProfileComponent } from './profile/profile.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DialogContentComponent, DialogContentDialog } from './dialog-content/dialog-content.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { WebcamModule } from 'ngx-webcam';
 import { WebcamComponent } from './webcam/webcam.component';
 import { DialogUpdateInfoComponent, DialogUpdateInfoContent } from './dialog-update-info/dialog-update-info.component';
+import { BusinessCardsService } from './businessCards.service';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { SearchFilterPipe } from './all-cards/search-filter.pipe';
+import { MatSnackBarModule, MatSidenavModule } from '@angular/material';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 
 @NgModule({
@@ -30,12 +35,14 @@ import { DialogUpdateInfoComponent, DialogUpdateInfoContent } from './dialog-upd
       NavBarComponent,
       AllCardsComponent,
       AddNewCardComponent,
-      ProfileComponent,
       DialogContentComponent,
       DialogContentDialog,
       WebcamComponent,
       DialogUpdateInfoComponent,
-      DialogUpdateInfoContent
+      DialogUpdateInfoContent,
+      SearchFilterPipe,
+      PageNotFoundComponent,
+      UserProfileComponent
    ],
    imports: [
       BrowserModule,
@@ -45,10 +52,13 @@ import { DialogUpdateInfoComponent, DialogUpdateInfoContent } from './dialog-upd
       AngularFireAuthModule,
       HttpClientModule,
       AngularFireDatabaseModule,
+      AngularFirestoreModule,
       AngularFireModule.initializeApp(environment.firebaseConfig),
       BrowserAnimationsModule,
       MatDialogModule,
-      WebcamModule
+      WebcamModule,
+      MatSnackBarModule,
+      MatSidenavModule
    ],
    entryComponents: [
       DialogContentComponent,
@@ -57,6 +67,7 @@ import { DialogUpdateInfoComponent, DialogUpdateInfoContent } from './dialog-upd
       DialogUpdateInfoContent
    ],
    providers: [
+      BusinessCardsService,
       AuthService,
       AuthGuard
    ],

@@ -1,36 +1,52 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
+<div id="page-container">
+<div id="content-wrap">
 <div>
     <app-nav-bar></app-nav-bar>
 </div>
 
 <div class="searchMessage">Search for Business Cards by Name or Scroll Through the List</div>
 
+
 <div class="container h-100">
     <div class="d-flex justify-content-center h-100">
         <div class="searchbar">
-        <input class="search_input" type="text" name="" placeholder="Search...">
-        <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+        <input class="search_input" type="text" name="" placeholder="Search..." [(ngModel)]="searchText">
+        <a class="search_icon"><i class="fas fa-search"></i></a>
         </div>
     </div>
 </div>
 
 <hr>
 
-<p class="instruction">Select info button to see business cards, to update click on the pen, to delete click on the trash bin.</p>
+<app-user-profile></app-user-profile>
 
-<div>
+<p class="instruction">Select business card button to see business card, to update select pen, to delete select trash bin.</p>
+
+<div *ngFor="let card of businessCardList | searchFilter: {firstName: searchText, lastName:searchText}; let i=index;">
     <p class="cardName">
         <i class="fas fa-user fa-2x"></i> 
-        Marko Milosavljevic
+        {{card.firstName}} {{card.lastName}}
 
-            <app-dialog-content></app-dialog-content>
-            <app-dialog-update-info></app-dialog-update-info>
+            <app-dialog-content [card]="card"></app-dialog-content>
+            <app-dialog-update-info [card]="card"></app-dialog-update-info>
 
-        <button class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
+        <button class="btn btn-danger" (click)="removeCard(card)" data-toggle="tooltip" title="Click to Delete Business Card"><i class="fas fa-trash-alt"></i></button>
     </p>
     <hr class="horizLine">
+</div>
+
+</div>
+
+<footer id="footer">
+        <p class="madeWith">Created by Marko Milosavljevic 2019. 
+                <img class="logo" src="assets/logo.jpg" width="35" height="35">
+          <span><a class="btn btn-link" style="color:black" href="https://github.com/MarMil1/CSC436-business-card-app">
+            <i class="fab fa-github fa-2x"></i></a></span> 
+        <span class="madeIn">Made in Angular8.</span></p>
+    </footer>
 </div>
 
 

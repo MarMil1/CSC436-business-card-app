@@ -3,9 +3,10 @@
   <div>
       <p class="step2">Business card snapshot</p>
       <hr class="horizLine2">
+      <img class="img" src="{{info.snapshot}}" alt="image" width="325px" height="225px">
   </div>
 
-  <div>
+  <div class="infoMargin">
       <p class="step2">Business card info</p>
       <hr class="horizLine2">
   </div>
@@ -17,22 +18,22 @@
     
               <div class="form-group col-md-6">
                   <label for="fname">First Name</label>
-                  <p class="info">Some first name here</p>
+                  <p class="info">{{info.firstName}}</p>
               </div>
     
               <div class="form-group col-md-6">
                   <label for="lname">Last Name</label>
-                  <p class="info">Some last name here</p>
+                  <p class="info">{{info.lastName}}</p>
               </div>
     
               <div class="form-group col-md-6">
                   <label for="email">Email</label>
-                  <p class="info">Some email here</p>
+                  <p class="info">{{info.email}}</p>
               </div>
           
               <div class="form-group col-md-6">
                   <label for="phoneNumber">Phone Number</label>
-                  <p class="info">Some phone number here</p>
+                  <p class="info">{{info.phone}}</p>
               </div>
     
           </div>
@@ -41,7 +42,7 @@
       <div>
           <hr class="horizLine2">
           <mat-dialog-actions align="end">
-              <button class="btn btn-danger" mat-dialog-close>Close</button>
+              <button class="btn btn-danger" (click)="onNoClick()" mat-dialog-close>Close</button>
           </mat-dialog-actions>
       </div>
     

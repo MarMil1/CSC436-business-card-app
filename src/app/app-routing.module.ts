@@ -4,7 +4,7 @@ import { LoginComponent } from './login/login.component';
 import { AllCardsComponent } from './all-cards/all-cards.component';
 import { AuthGuard } from './auth.guard';
 import { AddNewCardComponent } from './add-new-card/add-new-card.component';
-import { ProfileComponent } from './profile/profile.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 const routes: Routes = [
@@ -12,11 +12,16 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'allcards', component: AllCardsComponent, canActivate: [AuthGuard] },
   { path: 'addnewcard', component: AddNewCardComponent, canActivate: [AuthGuard]},
-  { path: 'profile', component: ProfileComponent, canActivate: [AuthGuard] }
+  { path: '**', component: PageNotFoundComponent },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+   imports: [
+      RouterModule.forRoot(routes)
+   ],
+   exports: [
+      RouterModule
+   ],
+   declarations: []
 })
 export class AppRoutingModule { }
