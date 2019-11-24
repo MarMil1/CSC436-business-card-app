@@ -1,4 +1,4 @@
 .btn-primary {
-    margin-right: -300px;
-    float: right;
+    position: absolute;
+    left: 470px;
   }

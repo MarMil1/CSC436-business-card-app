@@ -23,21 +23,26 @@
 
 .madeWith {
     padding-top: 20px;
-    margin-left: 30px;
     font-size: 17px;
+    position: absolute;
+    left: 30px;
 }
 
 .btn-link {
-    margin-left: 400px;
     color: black;
+    position: fixed;
+    right: 170px;
+    margin-top: -10px;
 }
 
 .madeIn {
-  margin-left: 40px;
   font-size: 17px;
+  position: fixed;
+  right: 30px;
 }
 
 .logo {
-  margin-left:400px;
   margin-bottom: 5px;
+  position: fixed;
+  left: 50%;
 }

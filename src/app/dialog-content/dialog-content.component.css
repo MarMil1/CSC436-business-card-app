@@ -11,8 +11,8 @@
 }
 
 .btn-success {
-    margin-right: 980px;
-    float: right;
+    position: absolute;
+    left: 370px;
   }
 
 .btn-danger {
